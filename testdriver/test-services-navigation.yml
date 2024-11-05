@@ -1,0 +1,24 @@
+version: 4.0.80
+steps:
+  - prompt: Click "Services"
+    commands:
+      - command: hover-text
+        text: SERVICES
+        description: link in the header
+        action: click
+  - prompt: Assert that a services page or section is shown
+    commands:
+      - command: assert
+        expect: the "SERVICES" heading is visible
+  - prompt: Explore one service detail
+    commands:
+      - command: hover-text
+        text: DISCOVERY AND IDEATION
+        description: service detail heading
+        action: click
+  - prompt: >-
+      Assert that service details or additional content is available  # Use the
+      content of the file from the environment
+    commands:
+      - command: assert
+        expect: the "DISCOVERY AND IDEATION" heading is visible
