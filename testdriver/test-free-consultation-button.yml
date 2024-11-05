@@ -1,0 +1,44 @@
+version: 4.0.80
+steps:
+  - prompt: Click "Get a Free Consult" button
+    commands:
+      - command: hover-text
+        text: Get a Free Consult
+        description: button in the header
+        action: click
+      - command: assert
+        expect: a form or interaction has started
+  - prompt: Complete any necessary steps for the consultation
+    commands:
+      - command: hover-text
+        text: 6
+        description: date on the calendar
+        action: click
+      - command: hover-text
+        text: 1:00am
+        description: time slot on the calendar
+        action: click
+  - prompt: Complete any necessary steps for the consultation
+    commands:
+      - command: hover-text
+        text: Your name *
+        description: name field on the form
+        action: click
+      - command: type
+        text: John Doe
+      - command: hover-text
+        text: Email address *
+        description: email field on the form
+        action: click
+      - command: type
+        text: johndoe@example.com
+      - command: hover-text
+        text: Confirm
+        description: confirm button on the form
+        action: click
+  - prompt: >-
+      Assert that confirmation or feedback is received  # Use the content of the
+      file from the environment
+    commands:
+      - command: assert
+        expect: the confirmation message "This meeting is scheduled" is visible
