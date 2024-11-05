@@ -1,0 +1,28 @@
+version: 4.0.80
+steps:
+  - prompt: Click "Request a Consultation"
+    commands:
+      - command: hover-text
+        text: REQUEST A CONSULTATION
+        description: button to request a consultation
+        action: click
+  - prompt: Assert that a consultation form or scheduling page is shown
+    commands:
+      - command: assert
+        expect: a consultation form or scheduling page is shown
+  - prompt: Attempt to schedule or request a consultation
+    commands:
+      - command: hover-text
+        text: 12:30am
+        description: time slot for scheduling
+        action: click
+  - prompt: >-
+      Assert that a confirmation message is displayed  # Use the content of the
+      file from the environment
+    commands:
+      - command: hover-text
+        text: Confirm
+        description: confirm button on the consultation form
+        action: click
+      - command: assert
+        expect: a confirmation message is displayed
