@@ -1,0 +1,22 @@
+version: 4.0.80
+steps:
+  - prompt: Click "About"
+    commands:
+      - command: hover-text
+        text: About
+        description: link in the header
+        action: click
+  - prompt: Assert that an about us page or section is shown
+    commands:
+      - command: assert
+        expect: the About Us section is shown
+  - prompt: Explore company information
+    commands:
+      - command: scroll
+        direction: down
+  - prompt: >-
+      Assert that the information is comprehensive and error-free  # Use the
+      content of the file from the environment
+    commands:
+      - command: assert
+        expect: the information is comprehensive and error-free
