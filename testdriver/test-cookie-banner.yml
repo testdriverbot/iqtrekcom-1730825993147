@@ -1,0 +1,18 @@
+version: 4.0.80
+steps:
+  - prompt: If a cookie banner appears, click "Accept" or "Agree"
+    commands:
+      - command: hover-text
+        text: Accept
+        description: cookie banner button
+        action: click
+      - command: hover-text
+        text: Agree
+        description: cookie banner button
+        action: click
+  - prompt: >-
+      Assert that the banner disappears and no longer obstructs interaction  #
+      Use the content of the file from the environment
+    commands:
+      - command: assert
+        expect: no cookie banner is visible
