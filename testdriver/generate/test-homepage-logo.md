@@ -1,0 +1,1 @@
+1. Assert that the logo is visible on the homepage.
