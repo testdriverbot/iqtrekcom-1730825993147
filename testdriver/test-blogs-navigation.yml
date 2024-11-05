@@ -1,0 +1,26 @@
+version: 4.0.80
+steps:
+  - prompt: Click "Blogs"
+    commands:
+      - command: hover-text
+        text: Blogs
+        description: link in the header
+        action: click
+  - prompt: Assert that a blogs page or section is shown
+    commands:
+      - command: assert
+        expect: the blogs page is displayed with featured blogs
+  - prompt: Read one blog post
+    commands:
+      - command: hover-text
+        text: Culture Of Experimentation And Adaptability At IQTrek
+        description: title of the first blog post
+        action: click
+  - prompt: >-
+      Assert that the blog content is engaging and informative  # Use the
+      content of the file from the environment
+    commands:
+      - command: hover-text
+        text: Latest Trends in AI Technology
+        description: title of a visible blog post
+        action: click
